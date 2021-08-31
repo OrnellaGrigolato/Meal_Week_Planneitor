@@ -3,6 +3,52 @@ import './MealList.css';
 
 export default function MealList () {
 
+  const getData=()=>{
+    fetch('recipe.json'
+    ,{
+      headers : { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+      .then(function(response){
+        console.log(response)
+  
+
+        return response.json();
+      })
+      .then(function(myJson) {
+        console.log(myJson);
+      });
+  }
+ getData()
+  return(
+    <div className='mealList'>
+      <div className='recipe'><p></p></div>
+    </div>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,15 +68,3 @@ export default function MealList () {
 //         }}
 
 // fetchData()
-const json = require('./recipe.json')
-fetch(json).then(res => res.json()).then(data => console.log(data))
-
-// fetch("recipe.json")
-// .then(res => res.json())
-// .then(data => console.log(data))
-  return(
-    <div className='mealList'>
-      gsds
-    </div>
-  )
-}
